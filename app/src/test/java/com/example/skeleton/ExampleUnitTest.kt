@@ -1,4 +1,4 @@
-package com.example.bongoskeleton
+package com.example.skeleton
 
 import org.junit.Test
 

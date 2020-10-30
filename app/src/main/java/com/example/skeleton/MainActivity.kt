@@ -1,4 +1,4 @@
-package com.example.bongoskeleton
+package com.example.skeleton
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
