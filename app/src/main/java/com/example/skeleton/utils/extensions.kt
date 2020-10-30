@@ -1,4 +1,4 @@
-package com.sam43.githubusers.ui.utils
+package com.example.skeleton.utils
 
 import android.content.Context
 import android.content.Intent
@@ -13,8 +13,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
-import com.sam43.githubusers.R
-import com.sam43.githubusers.ui.factory.ViewModelFactory
+import com.example.skeleton.R
 
 inline fun <reified T : ViewModel> Fragment.getViewModel(noinline creator: (() -> T)? = null): T {
     return if (creator == null)
@@ -43,13 +42,13 @@ fun Context.loadUserAvatar(url: String?, holder: ImageView) {
             .transition(DrawableTransitionOptions.withCrossFade(200))
             .apply(
                 RequestOptions.placeholderOf(0)
-                    .error(R.drawable.ic_android)
+                    .error(R.drawable.ic_launcher_background)
                     .dontAnimate().diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
                     .skipMemoryCache(true)
             )
             .into(holder)
     } else {
-        holder.setImageResource(R.drawable.ic_android)
+        holder.setImageResource(R.drawable.ic_launcher_background)
     }
 }
 

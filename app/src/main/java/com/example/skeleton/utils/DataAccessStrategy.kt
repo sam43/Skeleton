@@ -1,9 +1,8 @@
-package com.example.rickandmorty.utils
+package com.example.skeleton.utils
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import androidx.lifecycle.map
-import com.example.rickandmorty.utils.Resource.Status.*
 import kotlinx.coroutines.Dispatchers
 
 fun <T, A> performGetOperation(databaseQuery: () -> LiveData<T>,
@@ -15,10 +14,10 @@ fun <T, A> performGetOperation(databaseQuery: () -> LiveData<T>,
         emitSource(source)
 
         val responseStatus = networkCall.invoke()
-        if (responseStatus.status == SUCCESS) {
+        if (responseStatus.status == Resource.Status.SUCCESS) {
             saveCallResult(responseStatus.data!!)
 
-        } else if (responseStatus.status == ERROR) {
+        } else if (responseStatus.status == Resource.Status.ERROR) {
             emit(Resource.error(responseStatus.message!!))
             emitSource(source)
         }
