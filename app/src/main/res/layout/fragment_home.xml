@@ -9,7 +9,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/bg_phone_box"
         android:gravity="center_vertical"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,13 +22,28 @@
         <com.sam43.country_code_picker_library.CountryCodePicker
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:ccp_textSize="14sp"
+            app:ccpDialog_fastScroller_handleColor="#F44336"
+            app:ccpDialog_showFastScroller="true"
+            app:ccp_showNameCode="false"
+            app:ccpDialog_fastScroller_bubbleColor="@color/black"
+            app:ccpDialog_fastScroller_bubbleTextAppearance="@style/TextAppearance.bubble"
             app:ccp_defaultNameCode="BD" />
 
-        <EditText
+        <View
+            android:layout_width="1dp"
+            android:layout_height="16dp"
+            android:background="#BDBDBD"/>
+
+        <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:enabled="false"
-            android:hint="phone"
+            android:enabled="true"
+            android:background="@drawable/bg_phone_input_box"
+            android:gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:textSize="16sp"
+            android:hint=" Enter phone"
             android:inputType="phone"
             android:singleLine="true" />
     </LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextAppearance.bubble" parent="TextAppearance.MaterialComponents.Headline3">
+        <!-- Define your custom appearance here. -->
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#F44336</item>
+    </style>
+</resources>
