@@ -9,7 +9,7 @@ import android.view.inputmethod.InputMethodManager
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
-import com.example.skeleton.databinding.ActivityMainBinding
+import com.example.skeleton.databinding.ActivityLandingBinding
 import com.example.skeleton.utils.NetworkUtils
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -41,7 +41,7 @@ abstract class BaseActivity<T : ViewBinding?, V : BaseViewModel?>: AppCompatActi
     }
 
     private fun performViewBinding() {
-        viewDataBinding = ActivityMainBinding.inflate(layoutInflater) as T
+        viewDataBinding = ActivityLandingBinding.inflate(layoutInflater) as T
         setContentView(viewDataBinding?.root)
     }
 

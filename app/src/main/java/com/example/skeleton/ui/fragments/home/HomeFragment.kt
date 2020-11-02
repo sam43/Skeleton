@@ -5,17 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.viewbinding.ViewBinding
 import com.example.skeleton.R
 import com.example.skeleton.base.BaseFragment
-import com.example.skeleton.base.BaseViewModel
-import com.example.skeleton.databinding.ActivityMainBinding
-import com.example.skeleton.databinding.FragmentDashboardBinding
 import com.example.skeleton.databinding.FragmentHomeBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+
+@AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -34,6 +31,4 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
         get() = ViewModelProvider(this).get(HomeViewModel::class.java) // use factory
     override val layoutId: Int
         get() = R.layout.fragment_home
-    /*override val root: View
-        get() = FragmentHomeBinding.inflate(layoutInflater).root*/
 }

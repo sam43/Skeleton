@@ -11,7 +11,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.skeleton.R
 import com.example.skeleton.base.BaseFragment
 import com.example.skeleton.databinding.FragmentDashboardBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DashboardFragment : BaseFragment<FragmentDashboardBinding, DashboardViewModel>() {
     override fun onCreateView(
             inflater: LayoutInflater,
