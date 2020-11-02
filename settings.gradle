@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':country-code-search-library'
 rootProject.name = "Bongo Skeleton"

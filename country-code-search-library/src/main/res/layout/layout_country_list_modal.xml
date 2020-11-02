@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rl_holder"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#212121"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/counrty_chooser_header" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_countryDialog"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:dividerHeight="2dp"
+            android:layout_marginTop="5dp"
+            android:padding="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include" />
+
+        <com.futuremind.recyclerviewfastscroll.FastScroller
+            android:id="@+id/fastscroll"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/recycler_countryDialog"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/recycler_countryDialog" />
+
+        <TextView
+            android:id="@+id/textView_noresult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_result_found"
+            android:textColor="@android:color/primary_text_light"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
