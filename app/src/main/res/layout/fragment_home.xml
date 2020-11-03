@@ -22,10 +22,17 @@
         <com.sam43.country_code_picker_library.CountryCodePicker
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:ccp_textSize="14sp"
+            app:ccp_textSize="15sp"
             app:ccpDialog_fastScroller_handleColor="#F44336"
             app:ccpDialog_showFastScroller="true"
             app:ccp_showNameCode="false"
+            app:ccpDialog_backgroundColor="@color/blackBongo"
+            app:ccpSearchBox_background="@color/blackBongo"
+            app:ccpDialog_textColor="@color/white"
+            app:ccp_hintExampleNumber="true"
+            app:ccpSearchBoxHintColor="#898989"
+            app:ccpSearchBoxTextColor="@color/blackBongo"
+            app:ccpListDividerColor="#898989"
             app:ccpDialog_fastScroller_bubbleColor="@color/black"
             app:ccpDialog_fastScroller_bubbleTextAppearance="@style/TextAppearance.bubble"
             app:ccp_defaultNameCode="BD" />

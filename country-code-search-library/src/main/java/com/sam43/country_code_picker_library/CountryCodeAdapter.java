@@ -228,7 +228,7 @@ class CountryCodeAdapter extends RecyclerView.Adapter<CountryCodeAdapter.Country
         TextView textView_name, textView_code;
         ImageView imageViewFlag;
         LinearLayout linearFlagHolder;
-        View divider;
+        View divider, seperator;
 
         public CountryCodeViewHolder(View itemView) {
             super(itemView);
@@ -238,6 +238,19 @@ class CountryCodeAdapter extends RecyclerView.Adapter<CountryCodeAdapter.Country
             imageViewFlag = (ImageView) relativeLayout_main.findViewById(R.id.image_flag);
             linearFlagHolder = (LinearLayout) relativeLayout_main.findViewById(R.id.linear_flag_holder);
             divider = relativeLayout_main.findViewById(R.id.preferenceDivider);
+            seperator = relativeLayout_main.findViewById(R.id.itemDivider);
+
+            if (codePicker.getTileItemBackgroundColor() != 0) {
+                itemView.findViewById(R.id.tileItem).setBackgroundColor(codePicker.getTileItemBackgroundColor());
+            }
+
+            if (codePicker.getTileItemBackgroundResId() != 0) {
+                itemView.findViewById(R.id.tileItem).setBackgroundResource(codePicker.getTileItemBackgroundResId());
+            }
+
+            if (codePicker.getDividerColor() != 0) {
+                seperator.setBackgroundColor(codePicker.getDividerColor());
+            }
 
             if (codePicker.getDialogTextColor() != 0) {
                 textView_name.setTextColor(codePicker.getDialogTextColor());

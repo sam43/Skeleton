@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#212121"
+    android:id="@+id/tileItem"
     android:clickable="true">
 
     <LinearLayout
@@ -80,7 +80,7 @@
         android:layout_height="3dp"
         android:layout_alignParentTop="true"
         android:alpha="0.2"
-        android:background="#898989"
+        android:background="#21212199"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

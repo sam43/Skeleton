@@ -136,10 +136,8 @@ class CountryCodeDialog {
             imgDismiss.setVisibility(View.GONE);
         }
 
-        //title
-        if (!codePicker.getCcpDialogShowTitle()) {
-            //textViewTitle.setVisibility(View.GONE);
-        }
+        if (codePicker.getModalSearchBoxBackgroundColor() != 0)
+            llSearchBoxLayout.setBackgroundColor(codePicker.getModalSearchBoxBackgroundColor());
 
         //clear button color and title color
         if (codePicker.getDialogTextColor() != 0) {
@@ -153,13 +151,33 @@ class CountryCodeDialog {
         }
 
 
-        //editText tint
+        //editText properties and tint
         if (codePicker.getDialogSearchEditTextTintColor() != 0) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                editText_search.setBackgroundTintList(ColorStateList.valueOf(codePicker.getDialogSearchEditTextTintColor()));
+                setCursorColor(editText_search, codePicker.getModalSearchBoxBackgroundColor());
+            }
+        }
+
+        if (codePicker.getModalSearchEditTextColor() != 0) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                editText_search.setTextColor(codePicker.getModalSearchEditTextColor());
+                setCursorColor(editText_search, codePicker.getDialogSearchEditTextTintColor());
+            }
+        }
+
+        if (codePicker.getModalSearchEditTextHintColor() != 0) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                editText_search.setHintTextColor(codePicker.getModalSearchEditTextHintColor());
+            }
+        }
+
+/*        if (codePicker.getModalSearchEditTextCursorColor() != 0) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 editText_search.setBackgroundTintList(ColorStateList.valueOf(codePicker.getDialogSearchEditTextTintColor()));
                 setCursorColor(editText_search, codePicker.getDialogSearchEditTextTintColor());
             }
-        }
+        }*/
 
 
         //add messages to views

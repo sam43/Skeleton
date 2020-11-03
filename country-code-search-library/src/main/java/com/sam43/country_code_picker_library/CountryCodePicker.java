@@ -129,6 +129,10 @@ public class CountryCodePicker extends RelativeLayout {
     private CustomDialogTextProvider customDialogTextProvider;
     private int fastScrollerHandleColor = 0;
     private int dialogBackgroundResId, dialogBackgroundColor, dialogTextColor, dialogSearchEditTextTintColor;
+    // Sayem's work
+    private int tileItemBackgroundResId, tileItemBackgroundColor, tileItemTextColor, tileItemSearchBoxBackgroundColor;
+    private int dividerColor, modalSearchEditTextColor, modalSearchEditTextCursorColor;
+
     private int fastScrollerBubbleTextAppearance = 0;
     private CCPCountryGroup currentCountryGroup;
     private OnClickListener customClickListener;
@@ -249,7 +253,9 @@ public class CountryCodePicker extends RelativeLayout {
             ccpDialogShowNameCode = a.getBoolean(R.styleable.CountryCodePicker_ccpDialog_showNameCode, true);
 
             // TODO:: searchbox background color change
-            // todo:modal background
+            // todo:: Recycler item background color, text color change
+            // todo: Provide only data for custom view for others
+            // todo: modal background color change request
 
             //show title on dialog
             ccpDialogShowTitle = a.getBoolean(R.styleable.CountryCodePicker_ccpDialog_showTitle, true);
@@ -454,6 +460,15 @@ public class CountryCodePicker extends RelativeLayout {
             setDialogBackground(a.getResourceId(R.styleable.CountryCodePicker_ccpDialog_background, 0));
             setDialogTextColor(a.getColor(R.styleable.CountryCodePicker_ccpDialog_textColor, 0));
             setDialogSearchEditTextTintColor(a.getColor(R.styleable.CountryCodePicker_ccpDialog_searchEditTextTint, 0));
+
+            // For list items
+            setTileItemBackgroundColor(a.getColor(R.styleable.CountryCodePicker_ccpTileItem_backgroundColor, 0));
+            setTileItemBackgroundResId(a.getResourceId(R.styleable.CountryCodePicker_ccpTileItem_background, 0));
+            setTileItemTextColor(a.getColor(R.styleable.CountryCodePicker_ccpTileItem_TextColor, 0));
+            setModalSearchBoxBackgroundColor(a.getColor(R.styleable.CountryCodePicker_ccpSearchBox_background, 0));
+            setDividerColor(a.getColor(R.styleable.CountryCodePicker_ccpListDividerColor, 0));
+            setModalSearchEditTextColor(a.getColor(R.styleable.CountryCodePicker_ccpSearchBoxTextColor, 0));
+            setModalSearchEditTextHintColor(a.getColor(R.styleable.CountryCodePicker_ccpSearchBoxHintColor, 0));
 
             //text size
             int textSize = a.getDimensionPixelSize(R.styleable.CountryCodePicker_ccp_textSize, 0);
@@ -1260,6 +1275,103 @@ public class CountryCodePicker extends RelativeLayout {
     public void setDialogTextColor(int dialogTextColor) {
         this.dialogTextColor = dialogTextColor;
     }
+
+
+    // TODO:: Recycler Item style modificaiton
+
+    int getTileItemBackgroundColor() {
+        return tileItemBackgroundColor;
+    }
+
+    /**
+     * This will be color of dialog background
+     *
+     * @param tileItemBg
+     */
+    public void setTileItemBackgroundColor(int tileItemBg) {
+        this.tileItemBackgroundColor = tileItemBg;
+    }
+
+    int getTileItemBackgroundResId() {
+        return tileItemBackgroundResId;
+    }
+
+    /**
+     * This will be color of dialog background
+     *
+     * @param tileBackgroundResId
+     */
+    public void setTileItemBackgroundResId(@IdRes int tileBackgroundResId) {
+        this.tileItemBackgroundResId = tileBackgroundResId;
+    }
+
+    int getModalSearchBoxBackgroundColor() {
+        return tileItemSearchBoxBackgroundColor;
+    }
+
+    /**
+     * If device is running above or equal LOLLIPOP version, this will change tint of search edittext background.
+     *
+     * @param dialogSearchBg
+     */
+    public void setModalSearchBoxBackgroundColor(int dialogSearchBg) {
+        this.tileItemSearchBoxBackgroundColor = dialogSearchBg;
+    }
+
+    int getTileItemTextColor() {
+        return tileItemTextColor;
+    }
+
+    /**
+     * This color will be applied to
+     * Title of dialog
+     * Name of country
+     * Phone code of country
+     * "X" button to clear query
+     * preferred country divider if preferred countries defined (semi transparent)
+     *
+     * @param tileItemText
+     */
+    public void setTileItemTextColor(int tileItemText) {
+        this.tileItemTextColor = tileItemText;
+    }
+
+    int getDividerColor() { return dividerColor; }
+
+    public void setDividerColor(int divColor) {
+        this.dividerColor = divColor;
+    }
+
+    int getModalSearchEditTextColor() {
+        return modalSearchEditTextColor;
+    }
+
+    /**
+     * If device is running above or equal LOLLIPOP version, this will change tint of search edittext background.
+     *
+     * @param dialogSearchEditTextColor
+     */
+    public void setModalSearchEditTextColor(int dialogSearchEditTextColor) {
+        this.modalSearchEditTextColor = dialogSearchEditTextColor;
+    }
+
+    int getModalSearchEditTextHintColor() {
+        return modalSearchEditTextCursorColor;
+    }
+
+    /**
+     * If device is running above or equal LOLLIPOP version, this will change tint of search edittext background.
+     *
+     * @param editTextCursorColor
+     */
+    public void setModalSearchEditTextHintColor(int editTextCursorColor) {
+        this.modalSearchEditTextCursorColor = editTextCursorColor;
+    }
+
+
+    // End of RV item decorations
+
+
 
     int getDialogTypeFaceStyle() {
         return dialogTypeFaceStyle;
