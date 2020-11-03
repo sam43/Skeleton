@@ -248,6 +248,9 @@ public class CountryCodePicker extends RelativeLayout {
             //show name code on dialog
             ccpDialogShowNameCode = a.getBoolean(R.styleable.CountryCodePicker_ccpDialog_showNameCode, true);
 
+            // TODO:: searchbox background color change
+            // todo:modal background
+
             //show title on dialog
             ccpDialogShowTitle = a.getBoolean(R.styleable.CountryCodePicker_ccpDialog_showTitle, true);
 
