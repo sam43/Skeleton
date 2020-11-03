@@ -23,12 +23,12 @@ abstract class BaseFragment<T : ViewBinding?, V : BaseViewModel?>: Fragment() {
      */
     abstract val viewModel: V
 
-/*    /**
+    /**
      * Override for set binding variable
      *
      * @return variable id
-     */
-    abstract val binding: T*/
+    */
+    //abstract val binding: ViewBinding
 
     /**
      * @return layout resource id
@@ -50,6 +50,7 @@ abstract class BaseFragment<T : ViewBinding?, V : BaseViewModel?>: Fragment() {
          * Still unable to make the fragment binding generic
          * Need to work on it
          * */
+       // mViewDataBinding = binding
 
         return mViewDataBinding?.root
         /*mViewDataBinding = mViewDataBinding?.i

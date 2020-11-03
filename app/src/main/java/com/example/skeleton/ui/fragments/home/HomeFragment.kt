@@ -5,30 +5,42 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.example.skeleton.R
 import com.example.skeleton.base.BaseFragment
+import com.example.skeleton.databinding.CharactersFragmentBinding
 import com.example.skeleton.databinding.FragmentHomeBinding
+import com.example.skeleton.ui.fragments.characters.CharactersViewModel
+import com.example.skeleton.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.fragment_home.*
 
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
+
+    private var binding: FragmentHomeBinding by autoCleared()
+    private val homeViewModel: HomeViewModel by viewModels()
+
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        val root = FragmentHomeBinding.inflate(layoutInflater).root
-        val textView: TextView = root.findViewById(R.id.text_home)
+        binding = FragmentHomeBinding.inflate(inflater)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         viewModel.text.observe(viewLifecycleOwner, {
-            textView.text = it
+            binding.textHome.text = it // used view binding
         })
-        return root
     }
 
     override val viewModel: HomeViewModel
-        get() = ViewModelProvider(this).get(HomeViewModel::class.java) // use factory
+        get() = homeViewModel
     override val layoutId: Int
         get() = R.layout.fragment_home
 }

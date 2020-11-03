@@ -24,7 +24,7 @@
         tools:layout="@layout/fragment_notifications" />
     <fragment
         android:id="@+id/navigation_character"
-        android:name="com.example.skeleton.ui.characters.CharactersFragment"
+        android:name="com.example.skeleton.ui.fragments.characters.CharactersFragment"
         android:label="@string/title_characters"
         tools:layout="@layout/characters_fragment" >
         <action

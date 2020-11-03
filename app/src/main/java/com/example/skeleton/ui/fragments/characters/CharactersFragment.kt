@@ -1,4 +1,4 @@
-package com.example.skeleton.ui.characters
+package com.example.skeleton.ui.fragments.characters
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,7 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.skeleton.R
 import com.example.skeleton.databinding.CharactersFragmentBinding
-import com.example.skeleton.ui.fragments.characters.CharactersViewModel
+import com.example.skeleton.ui.characters.CharactersAdapter
 import com.example.skeleton.utils.Resource
 import com.example.skeleton.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
