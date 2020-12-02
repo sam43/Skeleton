@@ -17,8 +17,26 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_home">
-
+        app:layout_constraintTop_toBottomOf="@+id/text_home"
+        android:orientation="horizontal">
+<!--        <com.sam43.country_code_picker_library.CountryCodePicker
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:ccpDialog_fastScroller_handleColor="#F44336"
+            app:ccpDialog_showFastScroller="true"
+            app:ccp_showNameCode="false"
+            app:ccpSearchBox_background="#4A4A4A"
+            app:ccpSearchBoxHintColor="#6D000000"
+            app:ccpSearchBoxTextColor="@color/black"
+            app:ccpDialog_fastScroller_bubbleColor="@color/black"
+            app:ccpDialog_fastScroller_bubbleTextAppearance="@style/TextAppearance.bubble"
+            app:ccp_contentColor="@color/black"
+            app:ccp_countryPreference="BD,US,SA,IN"
+            app:ccpTileItem_background="@color/black"
+            app:ccp_defaultNameCode="BD"
+            app:ccp_showFlag="true"
+            app:ccp_showFullName="true" />-->
         <com.sam43.country_code_picker_library.CountryCodePicker
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,7 +44,7 @@
             app:ccpDialog_fastScroller_handleColor="#F44336"
             app:ccpDialog_showFastScroller="true"
             app:ccp_showNameCode="false"
-            app:ccpDialog_backgroundColor="@color/blackBongo"
+            app:ccpDialog_backgroundColor="@color/black"
             app:ccpSearchBox_background="@color/blackBongo"
             app:ccpDialog_textColor="@color/white"
             app:ccp_hintExampleNumber="true"
@@ -34,6 +52,7 @@
             app:ccpSearchBoxTextColor="@color/blackBongo"
             app:ccpListDividerColor="#898989"
             app:ccpDialog_fastScroller_bubbleColor="@color/black"
+            app:ccp_countryPreference="BD,US,SA,IN"
             app:ccpDialog_fastScroller_bubbleTextAppearance="@style/TextAppearance.bubble"
             app:ccp_defaultNameCode="BD" />
 
